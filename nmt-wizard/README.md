@@ -95,7 +95,7 @@ $(lsb_release -cs) \
 stable"
 $ sudo apt-get update
 $ sudo apt-get install docker-ce
-$ sudo sudo usermod -aG docker {{YOURUSERNAME}}
+$ sudo usermod -aG docker {{YOURUSERNAME}}
 ```
 or
 for other OS please see [installation instructions here](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
@@ -221,6 +221,8 @@ Copy the following JSON into the `nmt-wizard/server/config/myserver.json`.
     }
 }
 ```
+Make sure to replace `${TUTORIAL}` by the absolute PATH and {{YOURUSERNAME}}.
+
 This is a simple configuration of your server.
 * `"gpus"` is set to off `[0]` since we're not using GPU in this tutorial
 * the log file will be saved under `${TUTORIAL}/inftraining_logs`, make sure this directory exsit
@@ -284,8 +286,8 @@ Copy the following JSON into the `nmt-wizard/example/helloworld.json`.
             "rnn_size": "50",
             "word_vec_size": "20",
             "layers": "1",
-            "src_vocab": "${TUTORIAL}/data/vocab/helloworld.ruen.src.dict",
-            "tgt_vocab": "${TUTORIAL}/data/vocab/helloworld.ruen.tgt.dict"
+            "src_vocab": "${CORPUS_DIR}/vocab/helloworld.ruen.src.dict",
+            "tgt_vocab": "${CORPUS_DIR}/vocab/helloworld.ruen.tgt.dict"
         }
     }
 }
